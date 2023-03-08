@@ -9,11 +9,12 @@ function setup() {
   dx = 4 / w;
   dy = 4 / h;
   dd = min(w, h);
+  hdw = h / w;
   zoom = 1;
   center = createVector(0, 0);
   // p = 4;
   // p_ = 1 / p;
-  c = 16;
+  c = 1;
   c_ = 1 / c;
 
   createCanvas(w, h);
@@ -53,8 +54,8 @@ function fractal(p, x, y, s) {
         // zi = (j - h * 0.5) * dd + random(dd * p_);
         // zr = i / dd * zoom + 0 - 2;
         // zi = j / dd * zoom + 0 - 2;
-        zr = map(i, 0, w, (x - 2 * s) * dd / w, (x + 2 * s) * dd / w) + random(dx * p_);
-        zi = map(j, 0, h, (y - 2 * s) * dd / h, (y + 2 * s) * dd / h) + random(dy * p_);
+        zr = map(i, 0, w, (x - 2 * s), (x + 2 * s)) + random(zoom / dd);
+        zi = map(j, 0, h, (y - 2 * s), (y + 2 * s)) * hdw + random(zoom / dd);
         cr = -0.79;
         ci = 0.15;
         x2 = zr * zr;
