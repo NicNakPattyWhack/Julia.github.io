@@ -9,7 +9,7 @@ function setup() {
   dx = 4 / w;
   dy = 4 / h;
   dd = min(w, h);
-  hdw = h / w;
+  hdw = w / h;
   zoom = 1;
   center = createVector(0, 0);
   // p = 4;
