@@ -3,7 +3,7 @@ p5.disableFriendlyErrors = true;
 var overlay, zoomCenter, zoomSize, zoom, center, n, w, h, dx, dy, dd, p, p_, c, c_;
 
 function setup() {
-  n = 256;
+  n = 1024;
   w = windowWidth;
   h = windowHeight;
   dx = 4 / w;
