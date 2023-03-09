@@ -1,4 +1,4 @@
-// p5.disableFriendlyErrors = true;
+p5.disableFriendlyErrors = true;
 
 var overlay, zoomCenter, zoomSize, zoom, center, n, w, h, dx, dy, dd, p, p_, c, c_;
 
@@ -14,7 +14,7 @@ function setup() {
   center = createVector(0, 0);
   // p = 4;
   // p_ = 1 / p;
-  c = 1;
+  c = 4;
   c_ = 1 / c;
 
   createCanvas(w, h);
@@ -54,10 +54,12 @@ function fractal(p, x, y, s) {
         // zi = (j - h * 0.5) * dd + random(dd * p_);
         // zr = i / dd * zoom + 0 - 2;
         // zi = j / dd * zoom + 0 - 2;
-        zr = map(i, 0, w, (x - 2 * s), (x + 2 * s)) + random(zoom / dd);
-        zi = map(j, 0, h, (y - 2 * s), (y + 2 * s)) * hdw + random(zoom / dd);
-        cr = -0.79;
-        ci = 0.15;
+        zr = map(i, 0, w, (x - 2 * s), (x + 2 * s)) + random(zoom / dd * p_);
+        zi = map(j, 0, h, (y - 2 * s), (y + 2 * s)) * hdw + random(zoom / dd * p_);
+        // cr = -0.79;
+        // ci = 0.15;
+        cr = exp(-1);
+        ci = exp(-1);
         x2 = zr * zr;
         y2 = zi * zi;
         t = 0;
@@ -100,9 +102,15 @@ function fractal(p, x, y, s) {
 
       pixel = (i + j * w * p) * 4 * p;
 
-      pixels[pixel + 0] = pow(col * c_, 0.5) * 255;
-      pixels[pixel + 1] = pow(col * c_, 0.5) * 255;
-      pixels[pixel + 2] = pow(col * c_, 0.5) * 255;
+      if (t != n) {
+        pixels[pixel + 0] = pow(col * c_, 0.5) * 255;
+        pixels[pixel + 1] = pow(col * c_, 0.5) * 192;
+        pixels[pixel + 2] = pow(col * c_, 0.5) * 0;
+      }
+
+      // pixels[pixel + 0] = col * c_ % 1 * 255;
+      // pixels[pixel + 1] = col * c_ % 1 * 255;
+      // pixels[pixel + 2] = col * c_ % 1 * 255;
     }
   }
   updatePixels();
