@@ -23,7 +23,7 @@ function setup() {
   zoomCenter = createVector();
   zoomSize = createVector();
 
-  fractal(1, center.x, center.y, zoom);
+  fractal(4, center.x, center.y, zoom);
 }
 
 function draw() {
@@ -143,7 +143,7 @@ function mouseReleased() {
   zoom *= max(abs(zoomSize.x / w * 2), abs(zoomSize.y / h * 2));
   // zoom *= 0.5;
 
-  fractal(1, center.x, center.y, zoom);
+  fractal(4, center.x, center.y, zoom);
 
   overlay.clear();
 }
