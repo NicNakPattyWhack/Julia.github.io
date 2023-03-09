@@ -14,7 +14,7 @@ function setup() {
   center = createVector(0, 0);
   // p = 4;
   // p_ = 1 / p;
-  c = 4;
+  c = 16;
   c_ = 1 / c;
 
   createCanvas(w, h);
@@ -80,7 +80,7 @@ function fractal(p, x, y, s) {
         // col += smooth_col / n == 1 ? 0: smooth_col / n;
         // col += (smooth_col / n);
 
-        col += t / c;
+        col += t / n;
 
         // d = sqrt(x2 + y2);
         // col = log(log(d) / (log(2) * 2)) / log(2);
