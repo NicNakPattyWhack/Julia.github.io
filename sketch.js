@@ -80,7 +80,7 @@ function fractal(p, x, y, s) {
         // col += smooth_col / n == 1 ? 0: smooth_col / n;
         // col += (smooth_col / n);
 
-        col += t / n;
+        col += t / c;
 
         // d = sqrt(x2 + y2);
         // col = log(log(d) / (log(2) * 2)) / log(2);
