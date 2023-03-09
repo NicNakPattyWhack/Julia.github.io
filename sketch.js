@@ -14,7 +14,7 @@ function setup() {
   center = createVector(0, 0);
   // p = 4;
   // p_ = 1 / p;
-  c = 16;
+  c = 1;
   c_ = 1 / c;
 
   createCanvas(w, h);
