@@ -103,9 +103,9 @@ function fractal(p, x, y, s) {
       pixel = (i + j * w * p) * 4 * p;
 
       if (t != n) {
-        pixels[pixel + 0] = pow(col * c_, 0.5) * 255;
+        pixels[pixel + 0] = pow(col * c_, 0.5) * 0;
         pixels[pixel + 1] = pow(col * c_, 0.5) * 192;
-        pixels[pixel + 2] = pow(col * c_, 0.5) * 0;
+        pixels[pixel + 2] = pow(col * c_, 0.5) * 255;
       }
 
       // pixels[pixel + 0] = col * c_ % 1 * 255;
