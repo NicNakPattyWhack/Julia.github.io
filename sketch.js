@@ -56,10 +56,10 @@ function fractal(p, x, y, s) {
         // zi = j / dd * zoom + 0 - 2;
         zr = map(i, 0, w, (x - 2 * s), (x + 2 * s)) / hdw + random(zoom / dd * p_);
         zi = map(j, 0, h, (y - 2 * s), (y + 2 * s)) + random(zoom / dd * p_);
-        // cr = -0.79;
-        // ci = 0.15;
-        cr = exp(-1);
-        ci = exp(-1);
+        cr = -0.79;
+        ci = 0.15;
+        // cr = exp(-1);
+        // ci = exp(-1);
         x2 = zr * zr;
         y2 = zi * zi;
         t = 0;
