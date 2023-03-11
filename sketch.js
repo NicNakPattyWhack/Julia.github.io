@@ -23,7 +23,7 @@ function setup() {
   zoomCenter = createVector();
   zoomSize = createVector();
 
-  fractal(0.5, center.x, center.y, zoom);
+  fractal(1, center.x, center.y, zoom);
 }
 
 function draw() {
@@ -103,9 +103,9 @@ function fractal(p, x, y, s) {
       pixel = (i + j * w * p) * 4 * p;
 
       if (t != n) {
-        pixels[pixel + 0] = pow(col * c_, 0.5) * 0;
+        pixels[pixel + 0] = pow(col * c_, 0.5) * 255;
         pixels[pixel + 1] = pow(col * c_, 0.5) * 192;
-        pixels[pixel + 2] = pow(col * c_, 0.5) * 255;
+        pixels[pixel + 2] = pow(col * c_, 0.5) * 0;
       }
 
       // pixels[pixel + 0] = col * c_ % 1 * 255;
@@ -143,7 +143,7 @@ function mouseReleased() {
   zoom *= max(abs(zoomSize.x / w * 2), abs(zoomSize.y / h * 2));
   // zoom *= 0.5;
 
-  fractal(0.5, center.x, center.y, zoom);
+  fractal(1, center.x, center.y, zoom);
 
   overlay.clear();
 }
